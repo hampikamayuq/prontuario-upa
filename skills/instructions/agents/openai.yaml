@@ -1,0 +1,4 @@
+interface:
+  display_name: Prontuário UPA
+  short_description: Admissão e evolução na UPA
+  default_prompt: Fazer a admissão no modelo UPA com os dados que vou enviar.

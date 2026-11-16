@@ -1,0 +1,31 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "author": {
+    "email": "diegogalvez1089@gmail.com",
+    "name": "diego gal"
+  },
+  "description": "Assistente clínico baseado no Médico, com admissão e evolução para UPA no modelo personalizado do usuário.",
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "capabilities": [
+          "skills"
+        ],
+        "category": "Education & Research",
+        "composerIcon": "./assets/gpt-icon.png",
+        "defaultPrompt": [
+          "Fazer a admissão no modelo UPA com os dados que vou enviar.",
+          "Fazer a evolução no modelo UPA com os dados atualizados.",
+          "Analisar este caso, exames e conduta clínica."
+        ],
+        "developerName": "diego gal",
+        "displayName": "Prontuário UPA",
+        "logo": "./assets/gpt-icon.png",
+        "longDescription": "Assistente clínico baseado no Médico, com admissão e evolução para UPA no modelo personalizado do usuário.",
+        "shortDescription": "Admissão e evolução na UPA"
+      }
+    }
+  },
+  "name": "prontuario-upa",
+  "version": "0.1.4"
+}

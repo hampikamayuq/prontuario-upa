@@ -49,4 +49,4 @@ Para gerar os arquivos a partir da fonte principal `skills/instructions/SKILL.md
 
 ## Autoria e licença
 
-Diego Galvez. Este projeto é distribuído sob a [licença MIT](LICENSE), que permite uso, modificação e redistribuição, inclusive comercial, desde que o aviso de copyright e o texto da licença sejam preservados.
+Este projeto é distribuído sob a [licença MIT](LICENSE), que permite uso, modificação e redistribuição, inclusive comercial, desde que o aviso de copyright e o texto da licença sejam preservados.

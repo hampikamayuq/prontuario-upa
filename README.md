@@ -10,7 +10,7 @@ Use os arquivos indicados abaixo; os pacotes ZIP estão na pasta [dist](dist):
 | --- | --- | --- |
 | ChatGPT | `prontuario-upa-chatgpt.zip` | Importar como plugin somente em ambientes que ofereçam esse recurso. Enviar o ZIP em uma conversa não equivale a instalar. |
 | Claude | `prontuario-upa-claude.zip` | Importar como Skill personalizada e ativá-la, se disponível na conta. |
-| Gemini (aplicativo) | [instrucoes.md](gemini/instrucoes.md) | Em Habilidades → +, use Criar com o Gemini e anexe o arquivo, ou Criar manualmente e cole as instruções. |
+| Gemini (aplicativo) | [instrucoes.txt](gemini/instrucoes.txt) ou [instrucoes.md](gemini/instrucoes.md) | Em Habilidades → +, use Criar com o Gemini e anexe o arquivo, ou Criar manualmente e cole as instruções. |
 | Gemini CLI (opcional) | `prontuario-upa-gemini.zip` | Instalar como habilidade (Agent Skill), conforme o guia de instalação. |
 
 Veja [o guia de instalação](docs/INSTALACAO.md).

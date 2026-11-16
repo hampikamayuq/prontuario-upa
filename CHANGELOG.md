@@ -2,6 +2,8 @@
 
 ## Não lançado
 
+- Versão em texto simples das instruções (`gemini/instrucoes.txt`), gerada automaticamente junto à versão Markdown.
+
 - Opção de criar a habilidade no aplicativo com “Criar com o Gemini”, anexando o arquivo de instruções.
 
 - Distribuição para Gemini CLI como Agent Skill, com SKILL.md, licença MIT e pacote ZIP.

@@ -5,6 +5,7 @@ skill = (root / "skills/instructions/SKILL.md").read_text(encoding="utf-8")
 body = skill.split("---", 2)[2].lstrip()
 (root / "gemini").mkdir(exist_ok=True)
 (root / "gemini/instrucoes.md").write_text(body, encoding="utf-8")
+(root / "gemini/instrucoes.txt").write_text(body, encoding="utf-8")
 claude = root / "claude/prontuario-upa"
 claude.mkdir(parents=True, exist_ok=True)
 (claude / "SKILL.md").write_text("---\nname: prontuario-upa\ndescription: Organiza admissão, evolução e discussão clínica em português no modelo UPA quando o médico solicita esses registros.\n---\n\n" + body, encoding="utf-8")

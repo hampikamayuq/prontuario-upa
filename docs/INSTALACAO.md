@@ -23,6 +23,21 @@ Referência oficial: https://support.claude.com/en/articles/12512180-use-skills-
 
 Fluxo conferido nas capturas do aplicativo fornecidas pelo mantenedor: a aba **Habilidades** mostra as habilidades instaladas e o botão **+** oferece **Criar com o Gemini** e **Criar manualmente**. Os campos do editor e o botão de conclusão não aparecem nas capturas.
 
+### Criar com o Gemini e anexar o arquivo
+
+1. Baixe [gemini/instrucoes.md](../gemini/instrucoes.md).
+2. No aplicativo, abra **Habilidades → + → Criar com o Gemini**.
+3. Anexe o arquivo `instrucoes.md` e envie:
+
+   > Crie uma habilidade chamada prontuario-upa usando o arquivo anexado como fonte das instruções. Preserve integralmente as regras clínicas, a estrutura dos registros e as orientações de revisão médica. Não resuma nem omita regras.
+
+4. Revise as instruções propostas pelo Gemini e conclua a criação pelo controle disponível no aplicativo.
+5. Confira se `prontuario-upa` aparece em **Instaladas** e teste com um caso fictício.
+
+A opção de anexar o arquivo nesse fluxo foi informada pelo mantenedor. Confira o texto gerado antes de salvar, pois o Gemini pode reformular as instruções.
+
+### Criar manualmente
+
 1. Abra a aba **Habilidades** no aplicativo Gemini.
 2. Toque em **+** e selecione **Criar manualmente**.
 3. Use `prontuario-upa` como nome, se o editor solicitar um nome.
@@ -33,7 +48,7 @@ Fluxo conferido nas capturas do aplicativo fornecidas pelo mantenedor: a aba **H
 
 Se `prontuario-upa` já estiver instalada, abra as opções da habilidade pelo menu **…** e procure a opção de edição para atualizar as instruções. As opções desse menu ainda precisam ser conferidas no aplicativo.
 
-O arquivo `instrucoes.md` contém somente o texto para copiar e colar. As capturas não mostram importação de ZIP; o pacote `prontuario-upa-gemini.zip` abaixo é destinado ao Gemini CLI. A disponibilidade da tela Habilidades pode variar conforme a conta e a versão do aplicativo.
+O arquivo `instrucoes.md` contém as instruções para anexar em **Criar com o Gemini** ou copiar e colar em **Criar manualmente**. As capturas não mostram importação de ZIP; o pacote `prontuario-upa-gemini.zip` abaixo é destinado ao Gemini CLI. A disponibilidade da tela Habilidades pode variar conforme a conta e a versão do aplicativo.
 
 ## Gemini CLI (opcional) — habilidade (Agent Skill)
 

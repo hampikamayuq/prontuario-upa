@@ -8,6 +8,10 @@ body = skill.split("---", 2)[2].lstrip()
 claude = root / "claude/prontuario-upa"
 claude.mkdir(parents=True, exist_ok=True)
 (claude / "SKILL.md").write_text("---\nname: prontuario-upa\ndescription: Organiza admissão, evolução e discussão clínica em português no modelo UPA quando o médico solicita esses registros.\n---\n\n" + body, encoding="utf-8")
+gemini = root / "gemini/prontuario-upa"
+gemini.mkdir(parents=True, exist_ok=True)
+(gemini / "SKILL.md").write_text((claude / "SKILL.md").read_text(encoding="utf-8"), encoding="utf-8")
+(gemini / "LICENSE").write_bytes((root / "LICENSE").read_bytes())
 json.loads((root / "plugin.json").read_text())
 (root / "dist").mkdir(exist_ok=True)
 with zipfile.ZipFile(root / "dist/prontuario-upa-chatgpt.zip", "w", zipfile.ZIP_DEFLATED) as z:
@@ -16,7 +20,10 @@ with zipfile.ZipFile(root / "dist/prontuario-upa-chatgpt.zip", "w", zipfile.ZIP_
 with zipfile.ZipFile(root / "dist/prontuario-upa-claude.zip", "w", zipfile.ZIP_DEFLATED) as z:
     z.write(claude / "SKILL.md", "prontuario-upa/SKILL.md")
     z.write(root / "LICENSE", "prontuario-upa/LICENSE")
-for name in ["prontuario-upa-chatgpt.zip", "prontuario-upa-claude.zip"]:
+with zipfile.ZipFile(root / "dist/prontuario-upa-gemini.zip", "w", zipfile.ZIP_DEFLATED) as z:
+    z.write(gemini / "SKILL.md", "prontuario-upa/SKILL.md")
+    z.write(gemini / "LICENSE", "prontuario-upa/LICENSE")
+for name in ["prontuario-upa-chatgpt.zip", "prontuario-upa-claude.zip", "prontuario-upa-gemini.zip"]:
     with zipfile.ZipFile(root / "dist" / name) as z:
         assert z.testzip() is None
         print(name, z.namelist())

@@ -19,17 +19,23 @@ O ZIP contém `prontuario-upa/SKILL.md`. A disponibilidade de Skills depende do 
 
 Referência oficial: https://support.claude.com/en/articles/12512180-use-skills-in-claude
 
-## Gemini
+## Gemini CLI — habilidade (Agent Skill)
 
-1. Abra o Gemini na web e crie um novo Gem chamado Prontuário UPA.
-2. Copie `gemini/instrucoes.md` para as instruções.
-3. Se ultrapassar o limite do campo, anexe o arquivo ao Gem e use nas instruções: “Use o arquivo instrucoes.md como referência obrigatória para organizar admissões, evoluções e discussões clínicas no modelo Prontuário UPA. Preserve as regras de dados ausentes, exame físico, conduta e revisão médica. Não trate dados de exemplos como dados do caso atual.”
-4. Teste com um caso fictício e salve.
-5. Se desejar, use o compartilhamento do próprio Gem para fornecer um link a outras pessoas. Verifique as permissões: instruções e arquivos podem ficar visíveis aos destinatários.
+Requer o Gemini CLI instalado, autenticado e com suporte a Agent Skills. A instalação descrita aqui é para o CLI; a interface web de Gems é um produto diferente.
 
-Não há instalador ZIP de Gemini incluído neste projeto.
+1. Instale a habilidade a partir deste repositório:
 
-Referência oficial: https://support.google.com/gemini/answer/15146780
+   ```sh
+   gemini skills install https://github.com/hampikamayuq/prontuario-upa.git --path gemini/prontuario-upa
+   ```
+
+2. No Gemini CLI, execute `/skills reload` e `/skills list` e confirme que `prontuario-upa` aparece na lista.
+3. Solicite: “Use a habilidade prontuario-upa para fazer uma admissão com os dados fictícios que vou enviar”.
+4. Quando o Gemini solicitar autorização para ativar a habilidade, confira os detalhes e confirme.
+
+Para instalar a partir do download, baixe `dist/prontuario-upa-gemini.zip`, extraia-o e execute `gemini skills install ./prontuario-upa` no diretório onde extraiu o ZIP. A pasta contém `SKILL.md` e `LICENSE`.
+
+Referência oficial: https://geminicli.com/docs/cli/skills/
 
 ## Verificação antes do uso
 
@@ -37,4 +43,4 @@ As adaptações preservam o conteúdo-base 0.1.4, mas ainda não foram testadas 
 
 ## Atualizar e gerar pacotes
 
-Edite `skills/instructions/SKILL.md` como fonte principal e execute `python3 scripts/package.py`. Reimporte os pacotes ou atualize o Gem manualmente. Não publique dados reais de pacientes neste repositório.
+Edite `skills/instructions/SKILL.md` como fonte principal e execute `python3 scripts/package.py`. Reimporte os pacotes de ChatGPT e Claude. No Gemini CLI, desinstale a versão anterior com `gemini skills uninstall prontuario-upa`, repita a instalação e execute `/skills reload`. Não publique dados reais de pacientes neste repositório.

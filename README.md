@@ -33,4 +33,4 @@ Não há atualização automática entre GitHub, ChatGPT, Claude e Gemini. Baixe
 
 ## Autoria e licença
 
-Diego Galvez. Licença de redistribuição ainda não definida pelo autor; a publicação do repositório não concede automaticamente uma licença de uso, modificação ou redistribuição.
+Diego Galvez. Este projeto é distribuído sob a [licença MIT](LICENSE), que permite uso, modificação e redistribuição, inclusive comercial, desde que o aviso de copyright e o texto da licença sejam preservados.

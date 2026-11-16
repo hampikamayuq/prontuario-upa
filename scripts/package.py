@@ -11,10 +11,11 @@ claude.mkdir(parents=True, exist_ok=True)
 json.loads((root / "plugin.json").read_text())
 (root / "dist").mkdir(exist_ok=True)
 with zipfile.ZipFile(root / "dist/prontuario-upa-chatgpt.zip", "w", zipfile.ZIP_DEFLATED) as z:
-    for item in [root / "plugin.json", *(root / "skills").rglob("*"), *(root / "assets").rglob("*")]:
+    for item in [root / "LICENSE", root / "plugin.json", *(root / "skills").rglob("*"), *(root / "assets").rglob("*")]:
         if item.is_file(): z.write(item, item.relative_to(root))
 with zipfile.ZipFile(root / "dist/prontuario-upa-claude.zip", "w", zipfile.ZIP_DEFLATED) as z:
     z.write(claude / "SKILL.md", "prontuario-upa/SKILL.md")
+    z.write(root / "LICENSE", "prontuario-upa/LICENSE")
 for name in ["prontuario-upa-chatgpt.zip", "prontuario-upa-claude.zip"]:
     with zipfile.ZipFile(root / "dist" / name) as z:
         assert z.testzip() is None
